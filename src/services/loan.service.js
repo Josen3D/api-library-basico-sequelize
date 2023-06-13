@@ -7,7 +7,7 @@ import LoanModel from "../models/loan.model.js";
  */
 export const getAllLoans = async () => {
   try {
-    const responseGet = await LoanModel.findAll({});
+    const responseGet = await LoanModel.findAllData();
     return responseGet;
   } catch (error) {
     console.log("Error service: ", error);
@@ -21,7 +21,7 @@ export const getAllLoans = async () => {
  */
 export const getOneLoan = async (id) => {
   try {
-    const responseGet = await LoanModel.findOne({ where: { id } });
+    const responseGet = await LoanModel.findOneData(id);
     return responseGet;
   } catch (error) {
     console.log("Error service: ", error);
