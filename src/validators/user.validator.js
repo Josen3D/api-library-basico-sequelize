@@ -3,7 +3,7 @@ import { check } from "express-validator";
 // import validateRedult from utils
 import { validateResult } from "../utils/validator.handler.js";
 
-// create validators for createBook
+// create validators for createUser
 export const validatorCreateUser = [
   check("name").exists().notEmpty().isLength({ min: 3, max: 60 }),
   check("last_names").exists().notEmpty().isLength({ min: 3, max: 25 }),
@@ -19,7 +19,7 @@ export const validatorCreateUser = [
   },
 ];
 
-// create validator for getBooks
+// create validator for getUser
 export const validatorGetUser = [
   check("id").exists().notEmpty(),
 

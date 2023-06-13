@@ -11,6 +11,8 @@ import { dbConnect } from "./database/mysql.js";
 import bookRoutes from "./routes/book.routes.js";
 // import book routes
 import userRoutes from "./routes/user.routes.js";
+// import book routes
+import loanRoutes from "./routes/loan.routes.js";
 
 // create express app
 const app = express();
@@ -23,6 +25,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use("/api", bookRoutes);
 app.use("/api", userRoutes);
+app.use("/api", loanRoutes);
 
 // if the requested route doesnt exist, send an error message
 app.use((req, res, next) => {
