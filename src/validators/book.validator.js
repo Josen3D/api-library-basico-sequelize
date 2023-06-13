@@ -11,8 +11,12 @@ export const validatorCreateBook = [
   check("genre").exists().notEmpty().isLength({ min: 3, max: 20 }),
   check("author_country").exists().notEmpty().isLength({ min: 3, max: 20 }),
   check("no_pages").exists().notEmpty().isNumeric(),
-  check("edition_year").exists().notEmpty().isDate(),
-  check("price").exists().notEmpty().isDecimal(),
+  check("edition_year")
+    .exists()
+    .notEmpty()
+    .isNumeric()
+    .isLength({ min: 4, max: 4 }),
+  check("price").exists().notEmpty().isDecimal().isNumeric(),
 
   // validates the results of data
   (req, res, next) => {

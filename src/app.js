@@ -9,6 +9,8 @@ import cors from "cors";
 import { dbConnect } from "./database/mysql.js";
 // import book routes
 import bookRoutes from "./routes/book.routes.js";
+// import book routes
+import userRoutes from "./routes/user.routes.js";
 
 // create express app
 const app = express();
@@ -20,6 +22,7 @@ app.use(cors());
 const PORT = process.env.PORT || 3000;
 
 app.use("/api", bookRoutes);
+app.use("/api", userRoutes);
 
 // if the requested route doesnt exist, send an error message
 app.use((req, res, next) => {

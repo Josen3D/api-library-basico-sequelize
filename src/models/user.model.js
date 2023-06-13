@@ -3,41 +3,36 @@ import { sequelize } from "../database/mysql.js";
 import { DataTypes } from "sequelize";
 
 // define sequelize model
-const Book = sequelize.define(
-  "book",
+const User = sequelize.define(
+  "user",
   {
     // define model attributes
-    title: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    editorial: {
+    last_names: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    author: {
+    dni: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    genre: {
+    residence: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    author_country: {
+    town: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    no_pages: {
-      type: DataTypes.INTEGER,
+    province: {
+      type: DataTypes.STRING,
       allowNull: false,
     },
-    edition_year: {
-      type: DataTypes.NUMBER,
-      allowNull: false,
-    },
-    price: {
-      type: DataTypes.DECIMAL({ precision: 2 }),
-      allowNull: false,
+    birthdate: {
+      type: DataTypes.DATEONLY,
     },
   },
   {
@@ -46,4 +41,4 @@ const Book = sequelize.define(
 );
 
 // export model
-export default Book;
+export default User;
