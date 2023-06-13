@@ -82,8 +82,8 @@ export const updateItem = async (req, res) => {
       return;
     }
 
-    const user = await getOneLoan(id);
-    res.status(200).json(book);
+    const loan = await getOneLoan(id);
+    res.status(200).json(loan);
   } catch (error) {
     handleHttpError(res, "ERROR_UPDATE_ITEM: " + error);
   }

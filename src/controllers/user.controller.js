@@ -83,7 +83,7 @@ export const updateItem = async (req, res) => {
     }
 
     const user = await getOneUser(id);
-    res.status(200).json(book);
+    res.status(200).json(user);
   } catch (error) {
     handleHttpError(res, "ERROR_UPDATE_ITEM: " + error);
   }
